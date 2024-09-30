@@ -6,6 +6,8 @@ fi
 
 WORKDIR="$WORKSPACE"
 
+git config --global --add safe.directory $WORKDIR
+
 echo "## Changing workdir to $WORKDIR" && cd $WORKDIR
 
 if ! $(git rev-parse --is-inside-work-tree &>/dev/null); then
