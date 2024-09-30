@@ -1,6 +1,6 @@
 services:
     gitsync:
-        image: thearqsz/gitsync:latest
+        image: thearqsz/gitsync:latest 
         container_name: gitsync
         volumes:
             - $HOME/example-repo:/workspace
