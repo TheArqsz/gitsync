@@ -1,5 +1,7 @@
 # gitsync
 
+[![Build and push to DockerHub](https://github.com/TheArqsz/gitsync/actions/workflows/build_and_push.yml/badge.svg?branch=main)](https://github.com/TheArqsz/gitsync/actions/workflows/build_and_push.yml)
+
 **gitsync** is a lightweight bash-based tool designed to automatically check for remote changes in a specified Git repository and pull updates if necessary. The tool is containerized using Docker, allowing easy deployment in various environments. It can be used as a module in Docker Compose setups for seamless synchronization of repositories.
 
 ## Table of Contents
