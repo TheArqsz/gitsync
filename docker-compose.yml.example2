@@ -1,0 +1,16 @@
+services:
+    gitsync:
+        build: .
+        container_name: gitsync
+        volumes:
+            - $HOME/example-repo:/workspace
+        environment:
+            - BASIC_AUTH=1
+            - USERNAME=GithubUser
+            - PASSWORD_OR_KEY_FILE=/run/secrets/password_or_key_secret
+        secrets:
+            - password_or_key_secret
+
+secrets:
+  password_or_key_secret:
+    environment: PASSWORD_OR_KEY # Set the api key through the ENV variable PASSWORD_OR_KEY

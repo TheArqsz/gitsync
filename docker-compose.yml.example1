@@ -1,0 +1,14 @@
+services:
+    gitsync:
+        build: .
+        container_name: gitsync
+        volumes:
+            - $HOME/example-repo:/workspace
+        environment:
+            - SSH_PRIVATE_KEY_FILE=/run/secrets/ssh_private_key
+        secrets:
+            - ssh_private_key
+
+secrets:
+  ssh_private_key:
+    file: ./id_rsa

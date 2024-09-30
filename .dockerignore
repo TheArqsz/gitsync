@@ -1,0 +1,6 @@
+docker-compose.yml.example*
+*.md
+LICENSE
+Dockerfile
+*id_rsa*
+docker-compose.yml
