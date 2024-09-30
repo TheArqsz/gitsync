@@ -73,7 +73,7 @@ The Docker image runs a bash script (`entrypoint.sh`) that will:
 ```yaml
 services:
   gitsync:
-    build: .
+    image: thearqsz/gitsync:latest
     container_name: gitsync
     volumes:
       - $HOME/example-repo:/workspace
