@@ -64,6 +64,8 @@ fi
 MAIN_BRANCH=${MAIN_BRANCH:-main}
 TIMEOUT=${TIMEOUT:-60}
 
+git config --local core.sharedRepository group
+
 while [ true ]
 do
     echo "## [$(date +%Y-%m-%dT%H:%M:%SZ)] Synchronizing the remote repository from $REMOTE_ORIGIN"
@@ -71,6 +73,7 @@ do
     if [[ $(git rev-parse HEAD) == $(git rev-parse @{u}) ]]; then
         echo "## [$(date +%Y-%m-%dT%H:%M:%SZ)] No remote changes detected"
     else
+        git stash -q
         git pull origin $MAIN_BRANCH --force
     fi
     echo "## [$(date +%Y-%m-%dT%H:%M:%SZ)] Sleeping for $TIMEOUT seconds"
